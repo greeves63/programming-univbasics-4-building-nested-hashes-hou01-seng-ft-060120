@@ -50,37 +50,34 @@ def monopoly_with_fourth_tier
   # they'll guide you in how to modify what you just did to have more
   # complexity.
   
-   monopoly = {
-		:railroads=>
-		{
-		:pieces=>4,
-		:names=>
-		{
-			:reading_railroad=>
-			{
-				"mortgage_value"=>"$100"
-			},
-			:pennsylvania_railroad=>
-			{
-				"mortgage_value"=>"$200"
-			},
-			:b_and_o_railroad=>
-			{
-				"mortgage_value"=>"$400"
-			},
-			:shortline=>
-			{
-				"mortgage_value"=>"$800"
-			}
-		},
-		:rent_in_dollars=>
-		{
-			:one_piece_owned=>25,
-			:two_pieces_owned=>50,
-			:three_pieces_owned=>100,
-			:four_pieces_owned=>200
-		}
-		}
-	}
-
-end
+def monopoly_with_fourth_tier
+  monopoly = {
+    railroads: {
+      pieces: 4,
+      rent_in_dollars: {
+        one_piece_owned:      25, 
+# alt  :one_piece_owned =>    25,  <===this will give you the same result         
+        two_pieces_owned:     50,
+# alt  :two_pieces_owned =>   25,  <===this will give you the same result 
+        three_pieces_owned:   100, 
+# alt  :three_pieces_owned => 100, <===this will give you the same result 
+        four_pieces_owned:    200
+# alt  :four_pieces_owned =>  200  <===this will give you the same result 
+      }, 
+      names: {
+        reading_railroad: { 
+          "mortgage_value" => "$100",
+        },
+        pennsylvania_railroad: {
+          "mortgage_value" => "$200"
+        },
+        b_and_o_railroad: {
+          "mortgage_value" => "$400"
+        },
+        shortline: {
+          "mortgage_value" => "$800"
+        }
+      }
+    }
+  }
+  end
